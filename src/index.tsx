@@ -9,13 +9,21 @@ import { Register } from './views/register/Register';
 import { Login } from './views/login/Login';
 import { UpdatePassword } from './views/update-password/UpdatePassword';
 import { ErrorPage } from './views/error/ErrorPage';
-import { Home } from './Home';
+// import { Home } from './Home';
+import { Index } from './views/index/Index';
+import { UpdateInfo } from './views/update-info/UpdateInfo';
 
 const routes = [
   {
     path: "/",
-    element: <Home />,
+    element: <Index />,
     errorElement: <ErrorPage />,
+    children: [
+      {
+        path: 'update-info',
+        element: <UpdateInfo />
+      },
+    ]
   },
   {
     path: "login",

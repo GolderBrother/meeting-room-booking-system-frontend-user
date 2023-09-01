@@ -1,20 +1,11 @@
 import { Button, Form, Input, message } from 'antd';
 import './register.css';
-import { register, registerCaptcha } from '../../api';
+import { register, registerCaptcha, RegisterUser } from '../../api';
 import { useForm } from 'antd/es/form/Form';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 
 import { useCallback } from 'react';
-
-export interface RegisterUser {
-    username: string;
-    nickName: string;
-    password: string;
-    confirmPassword: string;
-    email: string;
-    captcha: string;
-}
 
 
 const layout1 = {
