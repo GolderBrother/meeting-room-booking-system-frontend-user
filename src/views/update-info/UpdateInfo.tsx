@@ -38,7 +38,7 @@ function _UpdateInfo() {
         if(res.status === 201 || res.status === 200) {
             message.success(res.data.data);
         } else {
-            message.error('系统繁忙，请稍后再试');
+            message.error(res.data.data ?? '系统繁忙，请稍后再试');
         }
     }, []);
 
@@ -47,7 +47,7 @@ function _UpdateInfo() {
         if(res.status === 201 || res.status === 200) {
             message.success(res.data.data);
         } else {
-            message.error('系统繁忙，请稍后再试');
+            message.error(res.data.data ?? '系统繁忙，请稍后再试');
         }
     }, []);
 
@@ -55,7 +55,7 @@ function _UpdateInfo() {
         <Form
             form={form}
             {...layout1}
-            onFinish={updateInfoApi}
+            onFinish={updateInfo}
             colon={false}
             autoComplete="off"
         >
@@ -106,7 +106,7 @@ function _UpdateInfo() {
                 label=" "
             >
                 <Button className='btn' type="primary" htmlType="submit">
-                    修改密码
+                    修改信息
                 </Button>
             </Form.Item>
         </Form>
